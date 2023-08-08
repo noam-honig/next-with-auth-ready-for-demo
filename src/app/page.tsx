@@ -22,7 +22,10 @@ export function Auth() {
   return (
     <>
       {session.status === "authenticated" ? (
-        <button onClick={() => signOut()}>sign out</button>
+        <>
+          Hello {session.data?.user?.name}{" "}
+          <button onClick={() => signOut()}>sign out</button>
+        </>
       ) : (
         <button onClick={() => signIn()}>Sign in</button>
       )}
